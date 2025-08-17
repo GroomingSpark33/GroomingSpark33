@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Web Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="player">
+    <div class="cover">
+      <img id="cover" src="penjaga-hati.jpg" alt="cover">
+    </div>
+    <h2 id="title">Penjaga Hati</h2>
+    <p id="artist">Nadhif Basalamah</p>
+
+    <div class="controls">
+      <button id="prev">⏮</button>
+      <button id="play">▶</button>
+      <button id="pause" style="display:none;">⏸</button>
+      <button id="next">⏭</button>
+    </div>
+
+    <input type="range" id="progress" value="0" max="100">
+
+    <div class="playlist">
+      <ul>
+        <li onclick="playSong(0)">Penjaga Hati</li>
+        <li onclick="playSong(1)">Bergema</li>
+        <li onclick="playSong(2)">Takkan Terganti</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+</html>
